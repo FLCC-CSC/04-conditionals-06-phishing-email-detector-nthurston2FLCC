@@ -1,8 +1,8 @@
 # FILE NAME - phishing_email_detector.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nicholas Thurston
+# DATE: 2/26/2026
+# BRIEF DESCRIPTION:  Phish Detector
 
 
 
@@ -15,7 +15,35 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
+def main():
+    def phish_detector():
+        
+        # ask user for subject line
+        subject = str(input('Enter the email subject line: '))
+        subject_upper = subject.upper()
 
+        # high risk indicators
+        high_risk = ['URGENT','IMMEDIATE ACTION REQUIRED']
+
+        # medium risk indicators
+        med_risk = ['WIN','FREE']
+
+        print('SECURITY ASSESSMENT:\n')
+
+        # logic to detect phish
+        if any(risk in subject_upper for risk in high_risk):
+            print('HIGH RISK: Possible phishing attempt.')
+            print('------------------------')
+            print(f'Analyzed subject: {subject}')
+        elif any(risk in subject_upper for risk in med_risk):
+            print('MEDIUM RISK: Suspicious offer detected.')
+            print('------------------------')
+            print(f'Analyzed subject: {subject}')
+        else:
+            print('LOW RISK: Verify legitimacy with sender')
+
+    phish_detector()
+main()
 
 
 
@@ -79,7 +107,7 @@ Analyzed subject: "Did you request a password reset?"
 1. Was using `in` difficult or was it natural?
 
 
-
+It was pretty natural. I like it because it saves a lot of hassle. I also wanted to simplify the code a bit and used the "any" function to check for the strings.
 
 
 
